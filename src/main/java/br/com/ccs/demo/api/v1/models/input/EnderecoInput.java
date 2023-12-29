@@ -1,4 +1,4 @@
-package br.com.ccs.demo.api.v1.model.input;
+package br.com.ccs.demo.api.v1.models.input;
 
 import br.com.ccs.demo.domain.entities.Endereco;
 import br.com.ccs.demo.domain.entities.enums.TipoEnderecoEnum;

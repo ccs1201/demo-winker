@@ -1,9 +1,11 @@
-package br.com.ccs.demo.domain.entity;
+package br.com.ccs.demo.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
@@ -15,12 +17,19 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = "pessoa")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@DynamicInsert
+@DynamicUpdate
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
     private UUID id;
 
+    @Column(unique = true)
+    @NotBlank
     private String nome;
 
     private LocalDate dataNascimento;
@@ -43,4 +52,10 @@ public class Pessoa {
     @Column(nullable = false,
             columnDefinition = "datetime")
     private OffsetDateTime dataUltimaAtualizacao;
+
+    @PostLoad
+    private void calcularIdade() {
+        var hoje = LocalDate.now();
+        idade = hoje.getYear() - dataNascimento.getYear();
+    }
 }

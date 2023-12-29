@@ -1,4 +1,4 @@
-package br.com.ccs.demo.api.v1.model.output;
+package br.com.ccs.demo.api.v1.models.output;
 
 import java.util.List;
 

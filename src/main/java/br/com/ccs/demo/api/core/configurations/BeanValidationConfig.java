@@ -1,4 +1,4 @@
-package com.ccs.erp.core.configuration.beanvalidation;
+package br.com.ccs.demo.api.core.configurations;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +14,5 @@ public class BeanValidationConfig {
         LocalValidatorFactoryBean validatorFactoryBean = new LocalValidatorFactoryBean();
         validatorFactoryBean.setValidationMessageSource(messageSource);
         return validatorFactoryBean;
-
     }
 }

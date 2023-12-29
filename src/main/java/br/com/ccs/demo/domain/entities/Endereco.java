@@ -1,9 +1,11 @@
-package br.com.ccs.demo.domain.entity;
+package br.com.ccs.demo.domain.entities;
 
-import br.com.ccs.demo.domain.entity.core.TipoEnderecoEnum;
+import br.com.ccs.demo.domain.entities.enums.TipoEnderecoEnum;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.OffsetDateTime;
@@ -17,6 +19,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
+@DynamicInsert
+@DynamicUpdate
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

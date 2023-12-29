@@ -1,4 +1,4 @@
-package br.com.ccs.demo.domain.entity.core;
+package br.com.ccs.demo.domain.entities.enums;
 
 import lombok.Getter;
 

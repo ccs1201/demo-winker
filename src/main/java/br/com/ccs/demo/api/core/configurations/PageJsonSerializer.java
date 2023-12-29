@@ -1,4 +1,4 @@
-package com.ccs.erp.core.utils.serializer;
+package br.com.ccs.demo.api.core.configurations;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -27,7 +27,7 @@ public class PageJsonSerializer extends JsonSerializer<Page<?>> {
         jsonGenerator.writeNumberField("size", page.getSize());
         jsonGenerator.writeNumberField("totalElements", page.getTotalElements());
         jsonGenerator.writeNumberField("totalPages", page.getTotalPages());
-        jsonGenerator.writeNumberField("number", page.getNumber());
+        jsonGenerator.writeNumberField("pageNumber", page.getNumber());
         jsonGenerator.writeEndObject();
     }
 }
