@@ -3,7 +3,6 @@ package br.com.ccs.demo.api.v1.controllers;
 import br.com.ccs.demo.api.v1.models.input.EnderecoInput;
 import br.com.ccs.demo.api.v1.models.output.EnderecoOutput;
 import br.com.ccs.demo.domain.core.services.EnderecoService;
-import br.com.ccs.demo.domain.core.services.impl.EnderecoServiceImpl;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;

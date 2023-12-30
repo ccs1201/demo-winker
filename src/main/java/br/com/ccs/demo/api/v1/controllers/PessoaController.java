@@ -40,7 +40,7 @@ public class PessoaController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Page<PessoaOutput> getAll(@PageableDefault(size = 10, page = 0) Pageable pageable) {
+    public Page<PessoaOutput> getAll(@PageableDefault Pageable pageable) {
         return PessoaOutput.toPage(service.findAll(pageable));
     }
 

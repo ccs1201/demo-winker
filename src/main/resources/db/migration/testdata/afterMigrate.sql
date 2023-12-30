@@ -1,7 +1,6 @@
 BEGIN;
 
-delete
-from pessoa;
+delete from pessoa;
 
 INSERT INTO pessoa (id, data_cadastro, data_nascimento, data_ultima_atualizacao, nome)
 VALUES ('4469350f-8ed0-40fb-a545-cc0be88f9d01', '2023-12-30 13:21:09.009974', '2000-12-29',
