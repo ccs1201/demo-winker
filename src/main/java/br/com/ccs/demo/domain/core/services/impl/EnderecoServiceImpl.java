@@ -33,7 +33,7 @@ public class EnderecoServiceImpl implements EnderecoService {
         try {
             return repository.save(endereco);
         } catch (DataIntegrityViolationException e) {
-            log.error(e.getStackTrace().toString());
+            log.error(e.getMessage());
             throw new ResponseStatusException(BAD_REQUEST,
                     String.format(PESSOA_NOT_FOUND_MSG, pessoaId));
         }
