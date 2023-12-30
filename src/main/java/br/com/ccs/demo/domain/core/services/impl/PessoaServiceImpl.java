@@ -59,6 +59,7 @@ public class PessoaServiceImpl implements PessoaService {
 
     @Override
     public Pessoa findComEndereco(UUID id) {
-        return repository.findComEndereco(id);
+        return repository.findComEndereco(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                String.format(NOT_FOUND_MSG, id)));
     }
 }

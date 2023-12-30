@@ -27,7 +27,8 @@ public class Endereco {
     @Column(name = "id", nullable = false)
     private UUID id;
 
-    private Enum<TipoEnderecoEnum> tipoEndereco;
+    @Enumerated(EnumType.STRING)
+    private TipoEnderecoEnum tipoEndereco;
 
     private String logradouro;
 

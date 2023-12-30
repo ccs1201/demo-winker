@@ -1,6 +1,7 @@
 package br.com.ccs.demo.api.v1.controllers;
 
 import br.com.ccs.demo.api.v1.models.input.PessoaInput;
+import br.com.ccs.demo.api.v1.models.output.PessoaComEnderecoOutput;
 import br.com.ccs.demo.api.v1.models.output.PessoaOutput;
 import br.com.ccs.demo.domain.core.services.PessoaService;
 import jakarta.validation.Valid;
@@ -41,5 +42,11 @@ public class PessoaController {
     @ResponseStatus(HttpStatus.OK)
     public Page<PessoaOutput> getPessoas(@PageableDefault(size = 10, page = 0) Pageable pageable) {
         return PessoaOutput.toPage(service.findAll(pageable));
+    }
+
+    @GetMapping("/{id}/enderecos")
+    @ResponseStatus(HttpStatus.OK)
+    public PessoaComEnderecoOutput gePessoaComEndereco(@PathVariable UUID id) {
+        return PessoaComEnderecoOutput.toOutput(service.findComEndereco(id));
     }
 }

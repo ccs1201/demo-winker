@@ -37,7 +37,7 @@ public class Pessoa {
     @Transient
     private int idade;
 
-    @OneToMany(cascade = CascadeType.ALL,
+    @OneToMany(cascade = CascadeType.REMOVE,
             mappedBy = "pessoa",
             fetch = FetchType.LAZY)
     private List<Endereco> enderecos;
@@ -54,6 +54,7 @@ public class Pessoa {
     private OffsetDateTime dataUltimaAtualizacao;
 
     @PostLoad
+
     private void calcularIdade() {
         var hoje = LocalDate.now();
         idade = hoje.getYear() - dataNascimento.getYear();
