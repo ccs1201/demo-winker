@@ -10,7 +10,7 @@ public enum TipoEnderecoEnum {
     SERVIDAO("Servidão"),
     ESTRADA("Estrada");
 
-    private String value;
+    private final String value;
 
     TipoEnderecoEnum(String value) {
         this.value = value;

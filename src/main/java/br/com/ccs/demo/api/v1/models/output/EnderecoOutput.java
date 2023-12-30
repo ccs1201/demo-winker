@@ -2,6 +2,7 @@ package br.com.ccs.demo.api.v1.models.output;
 
 import br.com.ccs.demo.domain.entities.Endereco;
 import br.com.ccs.demo.domain.entities.enums.TipoEnderecoEnum;
+import org.springframework.data.domain.Page;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -32,5 +33,9 @@ public record EnderecoOutput(
         return enderecos.stream()
                 .map(EnderecoOutput::toOutput)
                 .toList();
+    }
+
+    public static Page<EnderecoOutput> toPage(Page<Endereco> enderecos) {
+        return enderecos.map(EnderecoOutput::toOutput);
     }
 }
