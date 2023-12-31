@@ -1,4 +1,3 @@
-
 create table pessoa
 (
     id                      uuid      not null,
@@ -25,4 +24,8 @@ create table endereco
 alter table if exists endereco
     add constraint FK_Endereco_Pessoa
         foreign key (pessoa_id)
-            references pessoa on delete cascade ;
+            references pessoa on delete cascade;
+
+alter table if exists pessoa
+    add constraint UK_Pessoa_Nome
+        unique (nome);
